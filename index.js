@@ -9,11 +9,20 @@ app.use(express.urlencoded({ extended: false }));
 /** 手机号匹配人员 */
 const PhoneList = require('./phoneList');
 
+console.log('----------------------');
+console.log(process.env);
+console.log(process.env.MAC_USERNAME);
+console.log(process.env.PHONE);
+console.log(process.env.DD_ACCESSTOKEN);
+console.log(process.env.DD_SECRET);
+console.log('----------------------');
+
 // TODO: 替换ENV常量
 const robot = new ChatBot({
   baseUrl: 'https://oapi.dingtalk.com/robot/send',
-  accessToken: process.env.DD_ACCESSTOKEN,
-  secret: process.env.DD_SECRET,
+  accessToken:
+    '23fc2e7dce7805fb8d41dd36cda4d3d0cf2cfcc8629644404a7942d3e7358b11',
+  secret: 'SECb71f775436ef9d85d481b4c3afae6dd224af5d7b2b731a417677bbb915613f04',
 });
 
 app.post('/notice', async (req, res) => {
