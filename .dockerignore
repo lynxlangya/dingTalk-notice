@@ -17,7 +17,5 @@ src/app/public/uploads/
 typings/
 .cache
 .serverless/
-.vscode/launch.json
-/public/uploads
+.user.md
 wangdaoo.session.sql
-user.md

@@ -1,3 +1,4 @@
+/** 此处配置成员信息 */
 const PhoneList = [
   { name: process.env.MAC_USERNAME, phone: process.env.PHONE },
   { name: 'John', phone: '188xxxx8888' },
