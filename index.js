@@ -23,6 +23,10 @@ app.post('/notice', async (req, res) => {
   const { message, timestamp, url } = req.body.head_commit;
   /** 获取头像 */
   const { avatar_url, html_url } = req.body.sender;
+  /** 项目名称 */
+  const projectName = req.body.repository.name;
+  /** 项目主页 */
+  const projectHtml = req.body.repository.html_url;
   /** 获取用户信息 */
   let user = PhoneList.find((item) => item.name === name);
 
@@ -48,6 +52,7 @@ app.post('/notice', async (req, res) => {
   const title = '代码提交';
   const text =
     `## 代码提交信息 @${user.phone}\n` +
+    `> 项目：[${projectName}](${projectHtml}) \n\n` +
     `> ${message} \n\n` +
     `> 提交者：@${name} \n` +
     `> ![screenshot](http://cdn.wangdaoo.com/github.jpeg)\n` +
